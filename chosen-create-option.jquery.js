@@ -1265,7 +1265,9 @@
       option = $('<option />', options).attr('selected', 'selected');
       this.form_field_jq.append(option);
       this.form_field_jq.trigger("chosen:updated");
-      this.form_field_jq.trigger("change");
+      this.form_field_jq.trigger("change", {
+        'selected': options.value
+      });
       return this.search_field.trigger("focus");
     };
 
